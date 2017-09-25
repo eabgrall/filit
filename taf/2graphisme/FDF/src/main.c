@@ -6,7 +6,7 @@
 /*   By: eabgrall <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/21 15:26:30 by eabgrall          #+#    #+#             */
-/*   Updated: 2017/09/25 17:28:23 by eabgrall         ###   ########.fr       */
+/*   Updated: 2017/09/25 17:56:05 by eabgrall         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 
 int		on_key(int keycode, void *param)
 {
-	int		x;
-	int		y;
+//	int		x;
+//	int		y;
 
 	(void)param;
 	printf("event : %d\n", keycode);
@@ -24,7 +24,18 @@ int		on_key(int keycode, void *param)
 		exit(0);
 	if (keycode == 2)
 	{
-		while (x)
+		exit(0);
+/*		y = 100;
+		while (y < 800)
+		{
+			x = 100;
+			while (x < 800)
+			{
+				mlx_pixel_put(param->mlx, param->win, x, y, 0xDA00FF);
+				x++;
+			}
+			y = y + 3;
+		}*/
 	}
 	return (0);
 }
@@ -33,23 +44,26 @@ int		main(int ac, char **av)
 {
 	void	*mlx;
 	void	*win;
+	t_param	param;
 	int		x;
 	int		y;
 
 	mlx = mlx_init();
 	win = mlx_new_window(mlx, 900, 900, "fdf");
-	y = 50;
-	while (y < 350)
+	param.mlx = mlx;
+	param.win = win;
+	y = 100;
+	while (y < 800)
 	{
-		x = 50;
-		while (x < 100)
+		x = 100;
+		while (x < 800)
 		{
-			mlx_pixel_put(mlx, win, x, y, 0xFFFFFF);
+			mlx_pixel_put(param.mlx, param.win, x, y, 0x9900CC);
 			x++;
 		}
-		y++;
+		y = y + 5;
 	}
-	mlx_key_hook(win, on_key, 0);
+	mlx_key_hook(win, on_key, &param);
 	mlx_loop(mlx);
 	ac = 0;
 	av = 0;
