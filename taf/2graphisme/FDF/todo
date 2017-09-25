@@ -1,0 +1,23 @@
+regarde deja les : --- (ici plus bas)
+
+keycode ? ok
+expose ? c'est ds le sujet mais c'est quoi? ^^
+prjection parralelle iso conique?
+
+tracer trait : bresenham
+perspective dx - dy + middle... ?
+on me dit que image c'est plus ce sera plus opti sur les grandes maps...
+
+--- quoi metre ds la struct
+--- commment ca marche pour la faire passer en void *
+faut-il faire passer la map en coordonnee? comment?
+calcule segment
+calcule perspective
+
+bonus :
+
+couleur
+face cache
+couleur en fonction de l'altitude
+changer type de projection
+permetre deplacement
