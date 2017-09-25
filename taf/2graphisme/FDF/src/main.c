@@ -6,36 +6,34 @@
 /*   By: eabgrall <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/21 15:26:30 by eabgrall          #+#    #+#             */
-/*   Updated: 2017/09/25 17:56:05 by eabgrall         ###   ########.fr       */
+/*   Updated: 2017/09/25 18:10:16 by eabgrall         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 #include <stdio.h>
 
-int		on_key(int keycode, void *param)
+int		on_key(int keycode, t_param *param)
 {
-//	int		x;
-//	int		y;
+	int		x;
+	int		y;
 
-	(void)param;
 	printf("event : %d\n", keycode);
 	if (keycode == 53)
 		exit(0);
 	if (keycode == 2)
 	{
-		exit(0);
-/*		y = 100;
+		y = 97;
 		while (y < 800)
 		{
 			x = 100;
 			while (x < 800)
 			{
-				mlx_pixel_put(param->mlx, param->win, x, y, 0xDA00FF);
+				mlx_pixel_put(param->mlx, param->win, x, y, 0xAAFF00);
 				x++;
 			}
-			y = y + 3;
-		}*/
+			y = y + 6;
+		}
 	}
 	return (0);
 }
@@ -61,7 +59,7 @@ int		main(int ac, char **av)
 			mlx_pixel_put(param.mlx, param.win, x, y, 0x9900CC);
 			x++;
 		}
-		y = y + 5;
+		y = y + 6;
 	}
 	mlx_key_hook(win, on_key, &param);
 	mlx_loop(mlx);

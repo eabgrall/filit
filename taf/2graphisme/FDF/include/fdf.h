@@ -6,7 +6,7 @@
 /*   By: eabgrall <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/21 15:33:04 by eabgrall          #+#    #+#             */
-/*   Updated: 2017/09/21 20:12:32 by eabgrall         ###   ########.fr       */
+/*   Updated: 2017/09/25 18:15:02 by eabgrall         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,10 @@ typedef struct		s_param
 /*
 **	=== main.c ===
 */
-int		on_key(int keycode, void *param);
+int		on_key(int keycode, t_param *param);
+/*
+** === draw.c ===
+*/
+int		put_segment(t_param *param);
 
 #endif
